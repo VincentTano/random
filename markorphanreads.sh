@@ -18,7 +18,7 @@ while test $# -gt 1; do
         PRINTPROGRESS=1
 
     elif [ "$1" == "--remove" ]; then
-        >&2 echo " --remove flag specified. Removing orphaned reads."
+        >&2 echo "  --remove flag specified. Removing orphaned reads."
         REMOVEORPHAN=1
     else
         >&2 echo "  $1 flag is not recognised. Ignoring..."
@@ -52,7 +52,7 @@ TOTALRAW&&FNR%ONEHUNDREDTH==0{
         }        
     }
 
-    PROGRESSBAR=PROGRESSBAR"] "sprintf("%3.2f%\n",PROGRESSPERCENT)
+    PROGRESSBAR=PROGRESSBAR"] "sprintf("%d%\n",PROGRESSPERCENT)
     printf PROGRESSBAR > "/dev/stderr"
     printf "\033[1A" > "/dev/stderr"
     #WRITEBACK=">&2 echo -en $'\''\\e\\r '\''"
